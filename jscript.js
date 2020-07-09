@@ -35,12 +35,14 @@ $(document).ready(function(){
     }
     // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
     var punteggio=0;
+    var indovinati=[];
     for (var i = 0; i < arrayUtente.length; i++) {
       if (insideCheck(arrayPc,arrayUtente[i])) {
         punteggio++
+        indovinati.push(arrayUtente[i])
       }
     }
-    $("#result").text("Hai ricordato " + punteggio + " numeri")
+    $("#result").text("Hai ricordato " + punteggio + " numeri " + indovinati )
     $("#lista").removeClass("hidden")
   },3500);
 
