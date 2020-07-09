@@ -1,3 +1,6 @@
+body{
+  background-color: azure;
+}
 .hidden{
   display: none;
 }
@@ -6,6 +9,12 @@
   justify-content: center;
   align-items: center;
 }
+.img{
+  text-align: center;
+}
 #result{
   text-align: center;
+}
+img{
+  max-width: 15%;
 }
