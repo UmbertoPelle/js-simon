@@ -44,7 +44,7 @@ $(document).ready(function(){
     }
     $("#result").text("Hai ricordato " + punteggio + " numeri " + indovinati )
     $("#lista").removeClass("hidden")
-  },3000);
+  },30000);
 
 
 });
