@@ -9,15 +9,11 @@ $(document).ready(function(){
     var num = randomNum(1,100);
     if (!(insideCheck(arrayPc,num))) {
       arrayPc.push(num);
-      listaPc.innerHTML += "<li>" + num + "</li>"
     }
   }
+  alert(arrayPc)
 
   // Poi parte un timer di 30 secondi.
-  setTimeout(function () {
-    $("#lista").addClass("hidden")
-  }, 3000);
-
   // Dopo 30 secondi l’utente deve inserire, un prompt alla volta, i numeri che ha visto precedentemente.
   setTimeout(function(){
     while (arrayUtente.length < 5) {
@@ -33,7 +29,11 @@ $(document).ready(function(){
         numUtente = parseInt(prompt("numero gia presente"));
       }
     }
-    // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
+    for (var i = 0; i < arrayPc.length; i++) {
+      listaPc.innerHTML += "<li>" + arrayPc[i] + "</li>"
+    }
+    // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e
+    //quali dei numeri da indovinare sono stati individuati
     var punteggio=0;
     var indovinati=[];
     for (var i = 0; i < arrayUtente.length; i++) {
@@ -44,7 +44,7 @@ $(document).ready(function(){
     }
     $("#result").text("Hai ricordato " + punteggio + " numeri " + indovinati )
     $("#lista").removeClass("hidden")
-  },3500);
+  },3000);
 
 
 });
